@@ -6,13 +6,19 @@ import { cn } from '@/lib/utils'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-
+  const IMG = 'https://data.hapnanarsad.id/partyNeraka/'
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card/95 shadow-[0_4px_20px_rgba(0,0,0,0.8)] backdrop-blur-md">
       <div className="flex w-full items-center justify-between gap-4 px-6 py-2 md:px-14">
         <a href="#hero" className="group flex items-center gap-2" aria-label="Party Neraka home">
           <span className="clip-chamfer flex size-8 items-center justify-center bg-primary shadow-hard-sm">
-            <span className="type-headline-md text-white italic">PN</span>
+            <img
+              src={`${IMG}Logo_NoBG.png`}
+              alt="Party Neraka Logo"
+              className="size-5 object-contain transition-transform duration-300 group-hover:scale-110"
+            />
+          </span>
+          <span className="type-tactical text-muted-foreground/70">
           </span>
           <span className="type-headline-md tracking-wider text-white uppercase italic">
             Party Neraka
