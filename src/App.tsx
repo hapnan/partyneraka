@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <SiteHeader />
-      <main className="relative overflow-hidden bg-grid-tactical pt-[52px]">
+      <main className="relative overflow-hidden bg-grid-tactical pt-13">
         <Hero />
         <Ticker />
         <RosterSection />
