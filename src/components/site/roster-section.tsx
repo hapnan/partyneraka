@@ -17,11 +17,6 @@ export function RosterSection() {
         <SectionHeading
           bordered
           title="The Roster"
-          eyebrow={
-            <span className="text-gold">
-              {roster.length} operatives // dossiers declassified
-            </span>
-          }
           aside={
             <p className="max-w-md text-sm text-muted-foreground">
               Trading-card dossiers of Party Neraka core founders, creators, and combatants. Hover
