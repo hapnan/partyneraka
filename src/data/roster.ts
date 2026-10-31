@@ -41,6 +41,12 @@ export const roster: Member[] = [
   { name: 'Yusuf Muto', youtube: 'https://www.youtube.com/@ZeeRodan', instagram: 'https://www.instagram.com/zeerodan/', image: `${IMG}Yusup_Muto.jpg` },
 ]
 
+export function getMember(name: string): Member {
+  const member = roster.find((m) => m.name === name)
+  if (!member) throw new Error(`Unknown roster member: ${name}`)
+  return member
+}
+
 /** "https://www.youtube.com/@TomoyTom/featured" -> "@TomoyTom" */
 export function youtubeHandle(url: string) {
   const match = url.match(/youtube\.com\/(@[^/?#]+)/i)

@@ -1,6 +1,5 @@
 import { Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { roster } from '@/data/roster'
 
 export function Hero() {
   return (

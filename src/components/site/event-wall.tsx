@@ -1,4 +1,3 @@
-import { Network } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { events, type EventStatus } from '@/data/content'
 import { cn } from '@/lib/utils'

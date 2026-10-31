@@ -1,3 +1,5 @@
+import { getMember, type Member } from './roster'
+
 const LH = 'https://lh3.googleusercontent.com/aida-public/'
 
 export const navLinks = [
@@ -18,25 +20,114 @@ export const tickerItems: { text: string; tone: TickerTone }[] = [
   { text: 'Discord voice room 4 is popping with 128 squadmates', tone: 'muted' },
 ]
 
-export const featuredStream = {
-  title: 'Fandra & Hans // Chaos Valorant Squad Scrim',
-  tag: '5v5 Ranked',
-  subtitle: 'Party Neraka Official Raid Hub // Playing with Community Members',
-  viewers: '14,289',
-  image: `${LH}AB6AXuDwRpqq2QnwjZeziz-1NfSVAnbXoh2DT1qr5WFQAqv7HR4juEQaaNBRYNQGBC6ITXOwg6_1ivXesXc3QRR6TNoJr5YCqHKjz_yirMoIn0tnWq3xTCPY7TJ5DeRZ9rz0-QkHJyhjZOUabqujUMQWrI7i5EdMLy95f52vzrhQDNW6_KZZIcYfRMT71tK3kdYGUB6vOhxuN1i9Jh5hskULKtjRXzcdG8pHin7lVQ-E6bv3`,
-  imageAlt:
-    'High-contrast esports broadcast of a tactical shooter tournament lit by crimson flares and amber arena lights.',
-  href: 'https://www.youtube.com/@FandraOcto',
+export const videoCategories = [
+  'All',
+  'Live',
+  'Valorant',
+  'Apex',
+  'Warzone',
+  'Highlights',
+  'Just Chatting',
+] as const
+
+export type VideoCategory = Exclude<(typeof videoCategories)[number], 'All' | 'Live'>
+
+export type Video = {
+  id: string
+  title: string
+  channel: Member
+  category: VideoCategory
+  /** Present when the video is a live broadcast. */
+  live?: { viewers: string }
+  /** VOD-only metadata. */
+  duration?: string
+  views?: string
+  published?: string
+  /** Optional dedicated thumbnail; otherwise the channel's roster photo is used. */
+  thumbnail?: string
+  /** Short punchy overlay text for generated thumbnails. */
+  thumbText?: string
 }
 
-export const highlightVod = {
-  title: "Nugi's insane 1v4 Marshal clutch replay",
-  meta: 'Uploaded 14 hours ago // 84.2K views',
-  quality: '1080P60',
-  image: `${LH}AB6AXuApEvPPQJxLq_LtsyN7BfHXO1ZFyO9qZLFFh4Sn7u0v1MHjz8VHzyU-bf0TZMdMQw5XBTZK0Q1LmkkHo3Rq54_Z0QaE86mNHzRY5RfUN3OnuwVfGQvPZBgyE0WtSzWw9C2WDF4z4YuhTrRG4d76xphpTrqB5e6a4Qzsk-qTl9XDw2Vzl106gLqiMU6VpbxBnFicia9hybnLLMDii2jRthaZ26h25i8V_RZVMzH9YB1K`,
-  imageAlt: 'Esports montage thumbnail with tactical crosshairs and red neon lighting.',
-  href: 'https://www.youtube.com/@NugrahaDarmawan',
-}
+// Placeholder feed (Stitch sample content). Links point to each creator's channel.
+export const videos: Video[] = [
+  {
+    id: 'chaos-valorant-scrim',
+    title: 'Fandra & Hans // Chaos Valorant Squad Scrim — 5v5 Ranked with Community Members',
+    channel: getMember('Fandra Octoramonth'),
+    category: 'Valorant',
+    live: { viewers: '14,289' },
+    thumbnail: `${LH}AB6AXuDwRpqq2QnwjZeziz-1NfSVAnbXoh2DT1qr5WFQAqv7HR4juEQaaNBRYNQGBC6ITXOwg6_1ivXesXc3QRR6TNoJr5YCqHKjz_yirMoIn0tnWq3xTCPY7TJ5DeRZ9rz0-QkHJyhjZOUabqujUMQWrI7i5EdMLy95f52vzrhQDNW6_KZZIcYfRMT71tK3kdYGUB6vOhxuN1i9Jh5hskULKtjRXzcdG8pHin7lVQ-E6bv3`,
+  },
+  {
+    id: 'nugi-1v4-clutch',
+    title: "Nugi's INSANE 1v4 Marshal Clutch Replay",
+    channel: getMember('Nugi Darmawan'),
+    category: 'Highlights',
+    duration: '12:47',
+    views: '84.2K views',
+    published: '14 hours ago',
+    thumbnail: `${LH}AB6AXuApEvPPQJxLq_LtsyN7BfHXO1ZFyO9qZLFFh4Sn7u0v1MHjz8VHzyU-bf0TZMdMQw5XBTZK0Q1LmkkHo3Rq54_Z0QaE86mNHzRY5RfUN3OnuwVfGQvPZBgyE0WtSzWw9C2WDF4z4YuhTrRG4d76xphpTrqB5e6a4Qzsk-qTl9XDw2Vzl106gLqiMU6VpbxBnFicia9hybnLLMDii2jRthaZ26h25i8V_RZVMzH9YB1K`,
+  },
+  {
+    id: 'apex-chaos-gauntlet',
+    title: 'Apex Legends Chaos Gauntlet — Duo Bounty Hunt + Live Giveaways',
+    channel: getMember('Hans TheJooomers'),
+    category: 'Apex',
+    live: { viewers: '3,108' },
+    thumbText: 'Bounty Hunt',
+  },
+  {
+    id: 'petra-144fps',
+    title: 'Petra Clutch Highlight at 144FPS (no one saw this coming)',
+    channel: getMember('KhoPetra'),
+    category: 'Highlights',
+    duration: '08:15',
+    views: '51K views',
+    published: '2 days ago',
+    thumbText: '144FPS Clutch',
+  },
+  {
+    id: 'neraka-night-08',
+    title: 'Neraka Night Invitational #08 — Full Broadcast | IDR 25.000.000 Prize Pool',
+    channel: getMember('Queenuts'),
+    category: 'Valorant',
+    duration: '2:41:09',
+    views: '41K views',
+    published: '6 days ago',
+    thumbText: 'Invitational #08',
+  },
+  {
+    id: 'warzone-drop-in',
+    title: 'Warzone Subversion Drop-In — Squad Scrims with Fandra & Diki',
+    channel: getMember('Diki Dbangkongs'),
+    category: 'Warzone',
+    duration: '1:58:33',
+    views: '22K views',
+    published: '1 day ago',
+    thumbText: 'Drop-In',
+  },
+  {
+    id: 'midnight-banter',
+    title: 'Midnight Banter: Ranked Losses, Hot Takes & Roasting the Squad',
+    channel: getMember('Veereesa'),
+    category: 'Just Chatting',
+    duration: '1:12:05',
+    views: '18K views',
+    published: '3 days ago',
+    thumbText: 'Midnight Banter',
+  },
+  {
+    id: 'sentinel-setups',
+    title: "Sentinel Setups You're Sleeping On — Defender Masterclass",
+    channel: getMember('Margeaux'),
+    category: 'Valorant',
+    duration: '18:22',
+    views: '9.7K views',
+    published: '1 week ago',
+    thumbText: 'Sentinel Setups',
+  },
+]
 
 export type EventStatus = 'closed' | 'live' | 'upcoming'
 
