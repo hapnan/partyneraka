@@ -35,7 +35,7 @@ export function StreamsSection() {
         <div
           role="toolbar"
           aria-label="Filter videos"
-          className="-mx-6 mb-8 flex gap-3 overflow-x-auto px-6 pb-2 [scrollbar-width:none] md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden"
+          className="-mx-6 mb-8 flex gap-3 overflow-x-auto px-6 pb-2 scrollbar-none md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden"
         >
           {videoCategories.map((category) => {
             const active = filter === category
