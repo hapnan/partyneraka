@@ -13,7 +13,7 @@ function TickerRun({ hidden }: { hidden?: boolean }) {
   return (
     <div className="flex shrink-0 items-center gap-6 pr-6" aria-hidden={hidden || undefined}>
       <span className="flex items-center gap-1 font-bold text-primary">
-        <Radio className="size-4" /> Operational status: online
+        <Radio className="size-4" /> Live Right Now
       </span>
       {tickerItems.map((item) => (
         <Fragment key={item.text}>
