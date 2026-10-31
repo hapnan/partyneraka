@@ -14,7 +14,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-5 select-none"
       >
         <span className="font-heading text-[120px] leading-none tracking-tighter whitespace-nowrap text-white uppercase md:text-[220px]">
-          NERAKA // 01
+          Party Neraka
         </span>
       </div>
 
@@ -35,19 +35,9 @@ export function Hero() {
       </div>
 
       <div className="relative z-20 mx-auto flex max-w-5xl flex-col items-center text-center">
-        <div className="clip-tag mb-4 inline-flex flex-wrap items-center justify-center gap-2 border border-border bg-card px-4 py-1.5">
-          <span className="size-2 rounded-full bg-primary" />
-          <span className="type-tactical text-muted-foreground uppercase">
-            Street Esports // Collective 00-PN
-          </span>
-          <span className="font-bold text-primary">//</span>
-          <span className="type-tactical text-gold uppercase">
-            Squad Status: {roster.length} Operatives Combat Ready
-          </span>
-        </div>
 
         <h1 className="type-display max-w-4xl text-balance text-white uppercase drop-shadow-hellfire">
-          Tactical Chaos &amp; Gaming Subversion
+          Welcome To Party Neraka
         </h1>
 
         <p className="mt-4 max-w-2xl text-base text-balance text-muted-foreground">
