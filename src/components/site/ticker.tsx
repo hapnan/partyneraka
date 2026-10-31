@@ -29,7 +29,7 @@ function TickerRun({ hidden }: { hidden?: boolean }) {
 export function Ticker() {
   return (
     <div className="flex items-center overflow-hidden border-y border-border bg-card py-2">
-      <div className="type-tactical flex w-max animate-marquee whitespace-nowrap text-muted-foreground uppercase hover:[animation-play-state:paused]">
+      <div className="type-tactical flex w-max animate-marquee whitespace-nowrap text-muted-foreground uppercase hover:paused">
         <TickerRun />
         <TickerRun hidden />
       </div>
