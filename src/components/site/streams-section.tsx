@@ -10,19 +10,6 @@ export function StreamsSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="Live Stream & Content Hub"
-          eyebrow={
-            <span className="flex items-center gap-2 text-gold">
-              <span className="size-2 animate-pulse rounded-full bg-gold" />
-              Satellite downlink // feed broadcast
-            </span>
-          }
-          aside={
-            <div className="type-tactical flex items-center gap-2 uppercase">
-              <span className="text-muted-foreground">Server: SEA-Jakarta-01</span>
-              <span className="h-4 w-px bg-border" />
-              <span className="text-primary">Latency: 14ms</span>
-            </div>
-          }
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
