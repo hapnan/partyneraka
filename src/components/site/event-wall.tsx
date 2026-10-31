@@ -24,26 +24,20 @@ export function EventWall() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="Event Wall"
-          eyebrow={
-            <span className="flex items-center gap-2 text-primary">
-              <Network className="size-4" />
-              War room intel &amp; discord recon
-            </span>
-          }
         />
 
         <div className="clip-chamfer relative overflow-hidden border border-border bg-card p-6">
           <div className="pointer-events-none absolute top-0 right-0 size-32 bg-primary/10 blur-2xl" />
           <div className="mb-4 flex items-center justify-between gap-4 border-b border-border pb-3">
             <span className="type-tactical text-primary uppercase">
-              Mission calendar // event schedule
+              event schedule
             </span>
             <span className="type-tactical text-muted-foreground uppercase">
-              Oct 2025 // Q4 deployment
+              Oct 2025
             </span>
           </div>
           <h3 className="type-headline-md mb-4 text-white uppercase">
-            Upcoming Brackets &amp; Community Clashes
+            Community Clashes
           </h3>
 
           <ul className="space-y-3">
