@@ -4,7 +4,7 @@ export function WarRoom() {
       <div className="mx-auto max-w-4xl text-center">
         <div className="mx-auto mb-4 h-1 w-12 bg-primary" />
         <h2 className="type-headline-xl mb-4 text-white uppercase">
-          War Room Protocol // Zero Sanitization
+          About Party Neraka
         </h2>
         <p className="mb-6 text-base leading-relaxed text-muted-foreground">
           Party Neraka was born in 2023 from late night ranked losses, unfiltered laughs, and the
