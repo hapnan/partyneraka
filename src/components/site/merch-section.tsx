@@ -20,7 +20,7 @@ export function MerchSection() {
             <div className="md:text-right">
               <span className="type-headline-md text-gold uppercase">Pre-Order Open</span>
               <p className="type-tactical text-muted-foreground uppercase">
-                Ships worldwide // numbered editions
+                Ships worldwide
               </p>
             </div>
           }
