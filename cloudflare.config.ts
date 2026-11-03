@@ -10,5 +10,12 @@ export default defineConfig({
 		domains: [
 			"pt.hapnanarsad.id",
 		],
+		observability: {
+			enabled: true,
+			logs: {
+				enabled: true,
+				persist: true,
+			}
+		},
 	},
 });
